@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفحوصات - مختبرات الشمس الطبية</title>
+    <meta name="description" content="تعرف على جميع الفحوصات المتاحة في مختبرات الشمس الطبية - فحوصات شاملة ودقيقة">
+    
+    <!-- Bootstrap 5 RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Google Fonts Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link href="./css/style.css" rel="stylesheet">
+    <!-- Fallback CSS -->
+    <link href="./css/fallback.css" rel="stylesheet">
+
+    <!-- Custom Styles for Medical Case -->
+    <style>
+        .medical-case-card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .medical-case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+        }
+
+        .case-icon {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #ffc107, #17a2b8, #007bff, #28a745, #dc3545);
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border-left: 3px solid #dee2e6;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .diagnosis-box {
+            border: 2px solid #28a745;
+            animation: pulse-success 2s infinite;
+        }
+
+        @keyframes pulse-success {
+            0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+        }
+
+        .important-message {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+            border: none;
+            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
+        }
+
+        .wishes-icon {
+            animation: heartbeat 2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .medical-images .image-card {
+            transition: transform 0.3s ease;
+        }
+
+        .medical-images .image-card:hover {
+            transform: scale(1.05);
+        }
+
+        .medical-images img {
+            border: 3px solid #e9ecef;
+            transition: border-color 0.3s ease;
+        }
+
+        .medical-images img:hover {
+            border-color: #007bff;
+        }
+
+        /* Additional Medical Case Study Styles */
+        .case-banner {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
+            animation: case-glow 3s infinite;
+        }
+
+        @keyframes case-glow {
+            0%, 100% { box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3); }
+            50% { box-shadow: 0 8px 35px rgba(220, 53, 69, 0.5); }
+        }
+
+        .intro-card {
+            animation: intro-pulse 4s infinite;
+        }
+
+        @keyframes intro-pulse {
+            0%, 100% {
+                border-color: #17a2b8;
+                box-shadow: 0 0 0 0 rgba(23, 162, 184, 0.4);
+            }
+            50% {
+                border-color: #138496;
+                box-shadow: 0 0 0 15px rgba(23, 162, 184, 0);
+            }
+        }
+
+        .symptom-item {
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .symptom-item:hover {
+            background: rgba(255,255,255,0.8);
+            transform: scale(1.05);
+        }
+
+        .test-badge {
+            animation: badge-pulse 2s infinite;
+        }
+
+        @keyframes badge-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .message-card {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+            animation: message-glow 4s infinite;
+        }
+
+        @keyframes message-glow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3); }
+            50% { box-shadow: 0 15px 40px rgba(40, 167, 69, 0.5); }
+        }
+
+        .message-icon {
+            animation: heart-beat 2s infinite;
+        }
+
+        @keyframes heart-beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .doctor-card {
+            animation: doctor-highlight 4s infinite;
+        }
+
+        @keyframes doctor-highlight {
+            0%, 100% {
+                border-color: #007bff;
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+            }
+            50% {
+                border-color: #0056b3;
+                box-shadow: 0 0 0 15px rgba(0, 123, 255, 0);
+            }
+        }
+
+        .case-images .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0 0 1rem 1rem;
+        }
+
+        .case-images .image-card:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .case-images .image-card {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/11.jpg" alt="مختبرات الشمس الطبية" class="logo-img">
+                <span class="logo-text">مختبرات الشمس الطبية</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">الصفحة الرئيسية</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="postsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            أحدث المنشورات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="postsDropdown">
+                            <li><a class="dropdown-item" href="posts.html">جميع المنشورات</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item active" href="tests.html">الفحوصات</a></li>
+                            <li><a class="dropdown-item" href="equipment.html">الأجهزة الطبية</a></li>
+                            <li><a class="dropdown-item" href="lab-tests.html">التحاليل</a></li>
+                            <li><a class="dropdown-item" href="visits.html">الزيارات</a></li>
+                            <li><a class="dropdown-item" href="staff.html">كادر المختبر</a></li>
+                            <li><a class="dropdown-item" href="other-services.html">الخدمات الأخرى</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">عن مختبرات الشمس</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">خدماتنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">اتصل بنا</a>
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary ms-3">احجز موعدك الآن</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">الفحوصات الطبية</h1>
+                    <p class="lead mb-0">مجموعة شاملة من الفحوصات الطبية المتخصصة بأحدث التقنيات</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fas fa-vials" style="font-size: 8rem; opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tests Categories -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">أنواع الفحوصات المتاحة</h2>
+                <p class="text-muted">نقدم مجموعة واسعة من الفحوصات الطبية المتخصصة</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="test-category-card">
+                        <div class="test-icon">
+                            <i class="fas fa-heartbeat text-danger"></i>
+                        </div>
+                        <h5 class="fw-bold">فحوصات الدم</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>صورة الدم الكاملة</li>
+                            <li><i class="fas fa-check text-success me-2"></i>فلم الدم</li>
+                            <li><i class="fas fa-check text-success me-2"></i>فحص نخاع العظم</li>
+                            <li><i class="fas fa-check text-success me-2"></i>فحوصات النزف والتخثر</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="test-category-card">
+                        <div class="test-icon">
+                            <i class="fas fa-dna text-primary"></i>
+                        </div>
+                        <h5 class="fw-bold">الفحوصات الوراثية</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>الترحيل الكهربائي للهيموجلوبين</li>
+                            <li><i class="fas fa-check text-success me-2"></i>فحص الثلاسيميا</li>
+                            <li><i class="fas fa-check text-success me-2"></i>فحص المنجلية</li>
+                            <li><i class="fas fa-check text-success me-2"></i>الفحوصات الجينية</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="test-category-card">
+                        <div class="test-icon">
+                            <i class="fas fa-pills text-warning"></i>
+                        </div>
+                        <h5 class="fw-bold">فحوصات المعادن والفيتامينات</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>فيتامين د</li>
+                            <li><i class="fas fa-check text-success me-2"></i>فيتامين ب12</li>
+                            <li><i class="fas fa-check text-success me-2"></i>الحديد والفيريتين</li>
+                            <li><i class="fas fa-check text-success me-2"></i>الزنك والمغنيسيوم</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Case Post -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title text-primary">حالة طبية مهمة</h2>
+                <p class="text-muted">قصة نجاح في التشخيص المبكر للأمراض الوراثية</p>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4">
+                    <div class="medical-case-card bg-white rounded-4 shadow-lg p-4">
+                        <div class="case-header mb-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="case-icon me-3">
+                                    <i class="fas fa-user-md text-success fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-primary mb-1">إعلام مختبرات الشمس الطبية</h4>
+                                    <p class="text-muted mb-0 small">متابعي صفحتنا الكرام... طاب صباحكم</p>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-info border-0 rounded-3 mb-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-info-circle text-info fa-2x me-3"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">معلومة طبية مهمة</h6>
+                                        <p class="mb-0 small">هناك الكثير من الأمراض الوراثية لا تُكتشف مبكراً</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="case-content">
+                            <div class="case-story mb-4">
+                                <h5 class="fw-bold text-dark mb-3">
+                                    <i class="fas fa-stethoscope text-danger me-2"></i>
+                                    قصة المريض
+                                </h5>
+
+                                <div class="story-timeline">
+                                    <div class="timeline-item mb-3">
+                                        <div class="timeline-marker bg-warning"></div>
+                                        <div class="timeline-content">
+                                            <h6 class="fw-bold text-warning">الحالة الأولية</h6>
+                                            <p class="text-muted mb-0">مريض يعاني من فقر دم بسيط ومتكرر منذ أكثر من <strong>50 عاماً</strong></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-item mb-3">
+                                        <div class="timeline-marker bg-info"></div>
+                                        <div class="timeline-content">
+                                            <h6 class="fw-bold text-info">زيارة المختبر</h6>
+                                            <p class="text-muted mb-0">زار مختبرنا اليوم برفقة ولده الذي طلب إجراء فحوصات للتعرف على سبب فقر الدم المتكرر</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-item mb-3">
+                                        <div class="timeline-marker bg-primary"></div>
+                                        <div class="timeline-content">
+                                            <h6 class="fw-bold text-primary">الفحوصات المُجراة</h6>
+                                            <ul class="list-unstyled mb-0">
+                                                <li><i class="fas fa-check text-success me-2"></i>فحص صورة الدم</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>فحص فلم الدم</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>فحص الترحيل الكهربائي للهيموجلوبين</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-item mb-3">
+                                        <div class="timeline-marker bg-success"></div>
+                                        <div class="timeline-content">
+                                            <h6 class="fw-bold text-success">التشخيص النهائي</h6>
+                                            <div class="diagnosis-box bg-success bg-opacity-10 p-3 rounded-3">
+                                                <h6 class="fw-bold text-success mb-2">
+                                                    <i class="fas fa-microscope me-2"></i>
+                                                    فقر دم البحر الأبيض المتوسط البسيط
+                                                </h6>
+                                                <p class="text-muted mb-0 small">(الثلاسيميا الصغرى)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker bg-danger"></div>
+                                        <div class="timeline-content">
+                                            <h6 class="fw-bold text-danger">المتابعة الطبية</h6>
+                                            <p class="text-muted mb-0">تم إحالة المريض إلى طبيب اختصاص أمراض الدم السريري لمتابعة حالته</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Important Message -->
+                            <div class="important-message bg-gradient-primary text-white p-4 rounded-3 mb-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                    <h5 class="fw-bold mb-0">رسالة مهمة</h5>
+                                </div>
+                                <p class="mb-3">من الضروري جداً إجراء جميع الفحوصات التشخيصية التي تساعد في اكتشاف سبب فقر الدم لغرض أخذ العلاجات المناسبة</p>
+                                <p class="mb-0 fw-bold">لا تترددوا بطلب الاستشارة المجانية من أطباء أمراض الدم الاستشاريين الموجودين في مختبراتنا للاطمئنان على صحتكم وصحة عوائلكم</p>
+                            </div>
+
+                            <!-- Wishes -->
+                            <div class="wishes-section text-center">
+                                <div class="wishes-icon mb-3">
+                                    <i class="fas fa-heart text-danger fa-3x"></i>
+                                </div>
+                                <h5 class="fw-bold text-primary mb-2">أمنياتنا لكم بالصحة والعافية</h5>
+                                <p class="text-muted mb-0">
+                                    <i class="fas fa-hashtag me-1"></i>
+                                    <strong>إعلام_مختبرات_الشمس_الطبية</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="medical-images">
+                        <div class="image-card mb-3">
+                            <img src="images/14.jpg" alt="فحص الترحيل الكهربائي للهيموجلوبين" class="img-fluid rounded-3 shadow">
+                            <div class="image-caption text-center mt-2">
+                                <small class="text-muted">فحص الترحيل الكهربائي للهيموجلوبين</small>
+                            </div>
+                        </div>
+                        <div class="image-card">
+                            <img src="images/15.jpg" alt="تشخيص الثلاسيميا" class="img-fluid rounded-3 shadow">
+                            <div class="image-caption text-center mt-2">
+                                <small class="text-muted">تشخيص الثلاسيميا الصغرى</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Tests -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">أحدث الفحوصات المضافة</h2>
+                <p class="text-muted">آخر الفحوصات التي تم إضافتها إلى خدماتنا</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="latest-test-card">
+                        <div class="test-date">
+                            <span class="badge bg-primary">جديد</span>
+                            <small class="text-muted">ديسمبر 2024</small>
+                        </div>
+                        <h5 class="fw-bold">فحص الأجسام المضادة للغدة الدرقية</h5>
+                        <p class="text-muted">فحص متخصص لتشخيص أمراض الغدة الدرقية المناعية</p>
+                        <a href="contact.html" class="btn btn-outline-primary btn-sm">احجز الآن</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="latest-test-card">
+                        <div class="test-date">
+                            <span class="badge bg-success">محدث</span>
+                            <small class="text-muted">نوفمبر 2024</small>
+                        </div>
+                        <h5 class="fw-bold">فحص الحساسية الشامل</h5>
+                        <p class="text-muted">فحص شامل لتحديد مسببات الحساسية المختلفة</p>
+                        <a href="contact.html" class="btn btn-outline-primary btn-sm">احجز الآن</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Case Study Post -->
+    <section class="py-5 bg-gradient-primary">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-white fw-bold">حالة طبية نادرة</h2>
+                <p class="text-white-50">تشخيص دقيق وعناية متخصصة</p>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4">
+                    <div class="medical-case-card bg-white rounded-4 shadow-lg p-4">
+                        <div class="post-header mb-4">
+                            <div class="case-banner bg-danger text-white text-center py-3 rounded-3 mb-4">
+                                <h4 class="fw-bold mb-1">
+                                    <i class="fas fa-microscope me-2"></i>
+                                    تكور كريات الدم الوراثي
+                                </h4>
+                                <p class="mb-0 small">Hereditary Spherocytosis - حالة نادرة نسبياً</p>
+                            </div>
+                        </div>
+
+                        <div class="case-content">
+                            <!-- Case Introduction -->
+                            <div class="case-intro mb-4">
+                                <div class="intro-card bg-info bg-opacity-10 p-4 rounded-3 border border-info">
+                                    <h5 class="fw-bold text-info mb-3">
+                                        <i class="fas fa-user-md text-primary me-2"></i>
+                                        الحالة المشخصة هذا الأسبوع
+                                    </h5>
+                                    <div class="case-details">
+                                        <div class="patient-info mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <i class="fas fa-child text-success fa-2x me-3"></i>
+                                                <div>
+                                                    <h6 class="fw-bold text-success mb-1">طفل بعمر سنتان</h6>
+                                                    <p class="text-muted mb-0 small">تم تشخيصه بتكور كريات الدم الوراثي</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="symptoms-card bg-warning bg-opacity-10 p-3 rounded-3">
+                                            <h6 class="fw-bold text-warning mb-2">الأعراض المرصودة:</h6>
+                                            <div class="row">
+                                                <div class="col-md-4 mb-2">
+                                                    <div class="symptom-item">
+                                                        <i class="fas fa-tired text-danger me-2"></i>
+                                                        <span class="fw-bold text-danger">الخمول</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-2">
+                                                    <div class="symptom-item">
+                                                        <i class="fas fa-tint text-danger me-2"></i>
+                                                        <span class="fw-bold text-danger">فقر الدم</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-2">
+                                                    <div class="symptom-item">
+                                                        <i class="fas fa-eye text-warning me-2"></i>
+                                                        <span class="fw-bold text-warning">اليرقان</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Laboratory Tests -->
+                            <div class="lab-tests mb-4">
+                                <h5 class="fw-bold text-success mb-3">
+                                    <i class="fas fa-flask text-primary me-2"></i>
+                                    الفحوصات المختبرية
+                                </h5>
+
+                                <div class="tests-grid">
+                                    <!-- CBC Test -->
+                                    <div class="test-card mb-3">
+                                        <div class="test-header bg-primary text-white p-3 rounded-top">
+                                            <h6 class="fw-bold mb-0">
+                                                <i class="fas fa-vial me-2"></i>
+                                                CBC (تعداد الدم الكامل)
+                                            </h6>
+                                        </div>
+                                        <div class="test-content bg-primary bg-opacity-10 p-3 rounded-bottom">
+                                            <div class="test-results">
+                                                <div class="result-item mb-2">
+                                                    <i class="fas fa-arrow-down text-danger me-2"></i>
+                                                    <span class="fw-bold text-danger">أنيميا</span>
+                                                    <span class="text-muted small">(غالباً معتدلة إلى شديدة)</span>
+                                                </div>
+                                                <div class="result-item">
+                                                    <i class="fas fa-arrow-up text-success me-2"></i>
+                                                    <span class="fw-bold text-success">ارتفاع Reticulocytes</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Supporting Tests -->
+                                    <div class="test-card mb-3">
+                                        <div class="test-header bg-success text-white p-3 rounded-top">
+                                            <h6 class="fw-bold mb-0">
+                                                <i class="fas fa-check-circle me-2"></i>
+                                                الفحوصات الداعمة
+                                            </h6>
+                                        </div>
+                                        <div class="test-content bg-success bg-opacity-10 p-3 rounded-bottom">
+                                            <div class="test-highlight text-center">
+                                                <div class="test-name text-success fw-bold mb-2">EMA binding test</div>
+                                                <div class="test-badge bg-success text-white px-3 py-1 rounded-pill">
+                                                    <small class="fw-bold">الأكثر حساسية حالياً</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Differential Tests -->
+                                    <div class="test-card mb-3">
+                                        <div class="test-header bg-warning text-white p-3 rounded-top">
+                                            <h6 class="fw-bold mb-0">
+                                                <i class="fas fa-balance-scale me-2"></i>
+                                                الفحوصات التمييزية
+                                            </h6>
+                                        </div>
+                                        <div class="test-content bg-warning bg-opacity-10 p-3 rounded-bottom">
+                                            <div class="differential-result">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <span class="fw-bold text-warning">Coombs test (مباشر)</span>
+                                                    <div class="result-badge bg-danger text-white px-2 py-1 rounded">
+                                                        <small class="fw-bold">سلبي</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Doctor's Message -->
+                            <div class="doctor-message mb-4">
+                                <div class="message-card bg-gradient-success text-white p-4 rounded-3">
+                                    <div class="text-center">
+                                        <div class="message-icon mb-3">
+                                            <i class="fas fa-heart fa-3x"></i>
+                                        </div>
+                                        <h5 class="fw-bold mb-3">أطفالكم بعين الرعاية والاهتمام</h5>
+                                        <p class="mb-3">نحرص على سلامتهم بعلمنا وقلبنا</p>
+                                        <p class="mb-0 fw-bold">دمتم ودامت ابتساماتهم بخير</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Doctor Info -->
+                            <div class="doctor-info mb-4">
+                                <div class="doctor-card bg-primary bg-opacity-10 p-4 rounded-3 border border-primary">
+                                    <div class="d-flex align-items-center">
+                                        <div class="doctor-icon me-3">
+                                            <i class="fas fa-user-md text-primary fa-3x"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="fw-bold text-success mb-1">د. سجى حمادي فهد</h5>
+                                            <p class="text-muted mb-1">طبيبة اختصاص (بورد)</p>
+                                            <p class="fw-bold text-success mb-0">علم أمراض الدم</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Lab Signature -->
+                            <div class="lab-signature text-center">
+                                <div class="signature-icon mb-3">
+                                    <i class="fas fa-hospital-alt text-primary fa-3x"></i>
+                                </div>
+                                <h5 class="fw-bold text-primary mb-2">مختبرات الشمس الطبية</h5>
+                                <p class="text-muted mb-0">
+                                    <i class="fas fa-hashtag me-1"></i>
+                                    <strong>إعلام_مختبرات_الشمس_الطبية</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="case-images">
+                        <div class="image-card mb-3">
+                            <img src="images/40.jpg" alt="تكور كريات الدم الوراثي - فحص مجهري" class="img-fluid rounded-4 shadow-lg">
+                            <div class="image-overlay">
+                                <div class="overlay-content text-white text-center">
+                                    <h5 class="fw-bold mb-2">Hereditary Spherocytosis</h5>
+                                    <p class="mb-0">فحص مجهري للخلايا المكورة</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-card">
+                            <img src="images/41.jpg" alt="تشخيص أمراض الدم - د. سجى حمادي فهد" class="img-fluid rounded-3 shadow">
+                            <div class="image-caption text-center mt-2">
+                                <small class="text-white bg-primary px-2 py-1 rounded">تشخيص أمراض الدم</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-3">هل تحتاج إلى استشارة طبية؟</h3>
+            <p class="lead mb-4">فريقنا من الأطباء المتخصصين جاهز لتقديم الاستشارة والتفسير المجاني لجميع النتائج</p>
+            <a href="contact.html" class="btn btn-light btn-lg">احجز موعدك الآن</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">مختبرات الشمس الطبية</h5>
+                    <p class="text-muted">نحن ملتزمون بتقديم أفضل خدمات التشخيص الطبي بأعلى معايير الجودة والدقة.</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted text-decoration-none">الصفحة الرئيسية</a></li>
+                        <li><a href="about.html" class="text-muted text-decoration-none">عن مختبرات الشمس</a></li>
+                        <li><a href="services.html" class="text-muted text-decoration-none">خدماتنا</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">معلومات الاتصال</h5>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>ديالى - بعقوبة - شارع الطابو</p>
+                    <p class="text-muted"><i class="fas fa-phone me-2"></i>07770365517 - 07733334356</p>
+                    <p class="text-muted"><i class="fas fa-clock me-2"></i>يومياً من 8 صباحاً إلى 8 مساءً</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 مختبرات الشمس الطبية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="./js/main.js"></script>
+</body>
+</html>

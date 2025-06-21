@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الزيارات - مختبرات الشمس الطبية</title>
+    <meta name="description" content="تعرف على الزيارات العلمية والشراكات الاستراتيجية لمختبرات الشمس الطبية">
+    
+    <!-- Bootstrap 5 RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Google Fonts Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link href="./css/style.css" rel="stylesheet">
+    <!-- Fallback CSS -->
+    <link href="./css/fallback.css" rel="stylesheet">
+    
+    <!-- Custom Styles for Visits -->
+    <style>
+        .visit-card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        
+        .visit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+        }
+        
+        .visit-icon {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .visit-banner {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+        }
+        
+        .company-badge {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .company-badge:hover {
+            border-color: #007bff;
+            transform: scale(1.05);
+        }
+        
+        .partnership-icon {
+            animation: partnership-glow 3s infinite;
+        }
+        
+        @keyframes partnership-glow {
+            0%, 100% { 
+                color: #007bff;
+                text-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+            }
+            50% { 
+                color: #0056b3;
+                text-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+            }
+        }
+        
+        .visit-images img {
+            border: 3px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .visit-images img:hover {
+            border-color: #28a745;
+            transform: scale(1.05);
+        }
+
+        /* Scientific Conference Post Styles */
+        .conference-post-card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .conference-post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+        }
+
+        .activity-banner {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+            animation: activity-glow 3s infinite;
+        }
+
+        @keyframes activity-glow {
+            0%, 100% { box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3); }
+            50% { box-shadow: 0 8px 35px rgba(40, 167, 69, 0.5); }
+        }
+
+        .participation-card {
+            animation: participation-pulse 3s infinite;
+        }
+
+        @keyframes participation-pulse {
+            0%, 100% {
+                border-color: #007bff;
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+            }
+            50% {
+                border-color: #0056b3;
+                box-shadow: 0 0 0 15px rgba(0, 123, 255, 0);
+            }
+        }
+
+        .info-item {
+            transition: all 0.3s ease;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border-left: 3px solid transparent;
+        }
+
+        .info-item:hover {
+            background: #f8f9fa;
+            border-left-color: #007bff;
+            transform: translateX(10px);
+        }
+
+        .info-icon {
+            background: rgba(255,255,255,0.8);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .info-item:hover .info-icon {
+            transform: scale(1.2);
+        }
+
+        .importance-card {
+            animation: importance-highlight 3s infinite;
+        }
+
+        @keyframes importance-highlight {
+            0%, 100% {
+                border-color: #28a745;
+                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
+            }
+            50% {
+                border-color: #20c997;
+                box-shadow: 0 0 0 12px rgba(40, 167, 69, 0);
+            }
+        }
+
+        .benefit-item {
+            text-align: center;
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .benefit-item:hover {
+            background: rgba(255,255,255,0.8);
+            transform: translateY(-5px);
+        }
+
+        .benefit-item i {
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover i {
+            transform: scale(1.2);
+        }
+
+        .conference-images img {
+            border: 3px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .conference-images img:hover {
+            border-color: #28a745;
+            transform: scale(1.05);
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3d72 50%, #0f2a5a 100%);
+        }
+
+        /* International Accreditation Excellence Post Styles */
+        .accreditation-excellence-card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .accreditation-excellence-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+        }
+
+        .global-banner {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+            animation: global-glow 3s infinite;
+        }
+
+        @keyframes global-glow {
+            0%, 100% { box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3); }
+            50% { box-shadow: 0 8px 35px rgba(0, 123, 255, 0.5); }
+        }
+
+        .mission-card {
+            animation: mission-pulse 4s infinite;
+        }
+
+        @keyframes mission-pulse {
+            0%, 100% {
+                border-color: #28a745;
+                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
+            }
+            50% {
+                border-color: #20c997;
+                box-shadow: 0 0 0 20px rgba(40, 167, 69, 0);
+            }
+        }
+
+        .cap-card {
+            animation: cap-highlight 4s infinite;
+        }
+
+        @keyframes cap-highlight {
+            0%, 100% {
+                border-color: #007bff;
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+            }
+            50% {
+                border-color: #0056b3;
+                box-shadow: 0 0 0 18px rgba(0, 123, 255, 0);
+            }
+        }
+
+        .cap-logo {
+            animation: cap-rotate 6s infinite;
+        }
+
+        @keyframes cap-rotate {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(5deg) scale(1.1); }
+            50% { transform: rotate(0deg) scale(1.2); }
+            75% { transform: rotate(-5deg) scale(1.1); }
+        }
+
+        .cap-badge {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+            animation: cap-badge-shine 3s infinite;
+        }
+
+        @keyframes cap-badge-shine {
+            0%, 100% { box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3); }
+            50% { box-shadow: 0 10px 25px rgba(0, 123, 255, 0.5); }
+        }
+
+        .result-card {
+            transition: all 0.3s ease;
+        }
+
+        .result-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .result-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .result-card:hover .result-icon {
+            transform: scale(1.3);
+        }
+
+        .result-percentage {
+            animation: percentage-count 2s ease-out;
+        }
+
+        @keyframes percentage-count {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .excellence-badge {
+            animation: badge-bounce 2s infinite;
+        }
+
+        @keyframes badge-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .appreciation-intro {
+            animation: intro-highlight 3s infinite;
+        }
+
+        @keyframes intro-highlight {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .partner-card {
+            transition: all 0.3s ease;
+        }
+
+        .partner-card:hover {
+            background: white !important;
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .partner-badge {
+            transition: transform 0.3s ease;
+        }
+
+        .partner-card:hover .partner-badge {
+            transform: scale(1.1);
+        }
+
+        .thanks-card {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 50%, #28a745 100%) !important;
+            animation: thanks-glow 4s infinite;
+        }
+
+        @keyframes thanks-glow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3); }
+            50% { box-shadow: 0 15px 40px rgba(40, 167, 69, 0.4); }
+        }
+
+        .accreditation-gallery .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+
+        .accreditation-gallery .gallery-item img {
+            border: 3px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .accreditation-gallery .gallery-item:hover img {
+            border-color: #007bff;
+            transform: scale(1.05);
+        }
+
+        .accreditation-gallery .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,123,255,0.1), rgba(40,167,69,0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0.75rem;
+            z-index: 1;
+        }
+
+        .accreditation-gallery .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        /* Continuous Excellence & CAP Accreditation Post Styles */
+        .continuous-cap-card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .continuous-cap-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+        }
+
+        .commitment-banner {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+            animation: commitment-glow 3s infinite;
+        }
+
+        @keyframes commitment-glow {
+            0%, 100% { box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3); }
+            50% { box-shadow: 0 8px 35px rgba(0, 123, 255, 0.5); }
+        }
+
+        .statement-card {
+            animation: statement-pulse 4s infinite;
+        }
+
+        @keyframes statement-pulse {
+            0%, 100% {
+                border-color: #28a745;
+                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
+            }
+            50% {
+                border-color: #20c997;
+                box-shadow: 0 0 0 20px rgba(40, 167, 69, 0);
+            }
+        }
+
+        .achievement-highlight {
+            animation: achievement-pulse 4s infinite;
+        }
+
+        @keyframes achievement-pulse {
+            0%, 100% {
+                border-color: #ffc107;
+                box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4);
+            }
+            50% {
+                border-color: #e0a800;
+                box-shadow: 0 0 0 18px rgba(255, 193, 7, 0);
+            }
+        }
+
+        .achievement-icon {
+            animation: achievement-rotate 6s infinite;
+        }
+
+        @keyframes achievement-rotate {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(10deg) scale(1.1); }
+            50% { transform: rotate(0deg) scale(1.2); }
+            75% { transform: rotate(-10deg) scale(1.1); }
+        }
+
+        .cap-badge-highlight {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+            animation: cap-badge-glow 3s infinite;
+        }
+
+        @keyframes cap-badge-glow {
+            0%, 100% { box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3); }
+            50% { box-shadow: 0 10px 25px rgba(0, 123, 255, 0.5); }
+        }
+
+        .result-highlight {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+            animation: result-glow 4s infinite;
+        }
+
+        @keyframes result-glow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3); }
+            50% { box-shadow: 0 15px 40px rgba(40, 167, 69, 0.5); }
+        }
+
+        .rating-stars {
+            animation: stars-twinkle 2s infinite;
+        }
+
+        @keyframes stars-twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .cap-gallery .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+
+        .cap-gallery .gallery-item img {
+            border: 3px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .cap-gallery .gallery-item:hover img {
+            border-color: #007bff;
+            transform: scale(1.05);
+        }
+
+        .cap-gallery .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,123,255,0.1), rgba(40,167,69,0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0.75rem;
+            z-index: 1;
+        }
+
+        .cap-gallery .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        /* Scientific Cooperation Visit Post Styles */
+        .cooperation-visit-card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cooperation-visit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+        }
+
+        .cooperation-banner {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+            animation: cooperation-glow 3s infinite;
+        }
+
+        @keyframes cooperation-glow {
+            0%, 100% { box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3); }
+            50% { box-shadow: 0 8px 35px rgba(40, 167, 69, 0.5); }
+        }
+
+        .framework-card {
+            animation: framework-pulse 4s infinite;
+        }
+
+        @keyframes framework-pulse {
+            0%, 100% {
+                border-color: #007bff;
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+            }
+            50% {
+                border-color: #0056b3;
+                box-shadow: 0 0 0 18px rgba(0, 123, 255, 0);
+            }
+        }
+
+        .partner-item {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .partner-item:hover {
+            background: white !important;
+            border-color: #007bff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .partner-item i {
+            transition: transform 0.3s ease;
+        }
+
+        .partner-item:hover i {
+            transform: scale(1.2);
+        }
+
+        .visit-highlight {
+            animation: visit-pulse 4s infinite;
+        }
+
+        @keyframes visit-pulse {
+            0%, 100% {
+                border-color: #17a2b8;
+                box-shadow: 0 0 0 0 rgba(23, 162, 184, 0.4);
+            }
+            50% {
+                border-color: #138496;
+                box-shadow: 0 0 0 16px rgba(23, 162, 184, 0);
+            }
+        }
+
+        .visit-icon {
+            animation: visit-bounce 3s infinite;
+        }
+
+        @keyframes visit-bounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.1); }
+        }
+
+        .visit-badge {
+            background: linear-gradient(135deg, #17a2b8 0%, #138496 100%) !important;
+            animation: visit-badge-glow 3s infinite;
+        }
+
+        @keyframes visit-badge-glow {
+            0%, 100% { box-shadow: 0 5px 15px rgba(23, 162, 184, 0.3); }
+            50% { box-shadow: 0 10px 25px rgba(23, 162, 184, 0.5); }
+        }
+
+        .objective-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .objective-card:hover {
+            background: white !important;
+            border-color: #ffc107;
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .objective-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover .objective-icon {
+            transform: scale(1.2);
+        }
+
+        .host-card {
+            animation: host-highlight 4s infinite;
+        }
+
+        @keyframes host-highlight {
+            0%, 100% {
+                border-color: #28a745;
+                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
+            }
+            50% {
+                border-color: #20c997;
+                box-shadow: 0 0 0 14px rgba(40, 167, 69, 0);
+            }
+        }
+
+        .host-icon {
+            animation: host-pulse 2s infinite;
+        }
+
+        @keyframes host-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .host-name-card {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+            animation: name-glow 3s infinite;
+        }
+
+        @keyframes name-glow {
+            0%, 100% { box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3); }
+            50% { box-shadow: 0 10px 25px rgba(0, 123, 255, 0.5); }
+        }
+
+        .appreciation-card {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+            animation: appreciation-glow 4s infinite;
+        }
+
+        @keyframes appreciation-glow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3); }
+            50% { box-shadow: 0 15px 40px rgba(40, 167, 69, 0.5); }
+        }
+
+        .appreciation-icon {
+            animation: appreciation-bounce 2s infinite;
+        }
+
+        @keyframes appreciation-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .appreciation-item {
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .appreciation-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.05);
+        }
+
+        .visit-gallery .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+
+        .visit-gallery .gallery-item img {
+            border: 3px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .visit-gallery .gallery-item:hover img {
+            border-color: #28a745;
+            transform: scale(1.05);
+        }
+
+        .visit-gallery .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(40,167,69,0.1), rgba(0,123,255,0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0.75rem;
+            z-index: 1;
+        }
+
+        .visit-gallery .gallery-item:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/11.jpg" alt="مختبرات الشمس الطبية" class="logo-img">
+                <span class="logo-text">مختبرات الشمس الطبية</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">الصفحة الرئيسية</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="postsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            أحدث المنشورات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="postsDropdown">
+                            <li><a class="dropdown-item" href="posts.html">جميع المنشورات</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="tests.html">الفحوصات</a></li>
+                            <li><a class="dropdown-item" href="equipment.html">الأجهزة الطبية</a></li>
+                            <li><a class="dropdown-item" href="lab-tests.html">التحاليل</a></li>
+                            <li><a class="dropdown-item active" href="visits.html">الزيارات</a></li>
+                            <li><a class="dropdown-item" href="staff.html">كادر المختبر</a></li>
+                            <li><a class="dropdown-item" href="other-services.html">الخدمات الأخرى</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">عن مختبرات الشمس</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">خدماتنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">اتصل بنا</a>
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary ms-3">احجز موعدك الآن</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">الزيارات العلمية</h1>
+                    <p class="lead mb-0">شراكات استراتيجية مع أفضل الشركات العالمية في مجال التشخيص المختبري</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fas fa-handshake" style="font-size: 8rem; opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scientific Visit -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title text-success">زيارة علمية مهمة</h2>
+                <p class="text-muted">شراكة استراتيجية مع الشركات العالمية الرائدة</p>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4">
+                    <div class="visit-card bg-white shadow-lg p-4">
+                        <div class="visit-header mb-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="visit-icon me-3">
+                                    <i class="fas fa-handshake text-success fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-primary mb-1">زيارة علمية إلى مختبرات الشمس الطبية</h4>
+                                    <p class="text-muted mb-0 small">شراكة علمية وتقنية متميزة</p>
+                                </div>
+                            </div>
+                            
+                            <div class="visit-banner text-white text-center py-3 rounded-3 mb-4">
+                                <h5 class="fw-bold mb-1">
+                                    <i class="fas fa-microscope me-2"></i>
+                                    الوفد الزائر من الشركات العالمية
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="visit-content">
+                            <!-- Visiting Teams -->
+                            <div class="visiting-teams mb-4">
+                                <h5 class="fw-bold text-success mb-3">
+                                    <i class="fas fa-users text-primary me-2"></i>
+                                    الوفد الزائر
+                                </h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="team-card bg-light p-3 rounded-3 text-center">
+                                            <i class="fas fa-chart-line text-info fa-2x mb-2"></i>
+                                            <h6 class="fw-bold text-info">قسم المبيعات</h6>
+                                            <p class="text-muted small mb-0">الشركة الطبية المتحدة</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4 mb-3">
+                                        <div class="team-card bg-light p-3 rounded-3 text-center">
+                                            <i class="fas fa-tools text-warning fa-2x mb-2"></i>
+                                            <h6 class="fw-bold text-warning">قسم الصيانة</h6>
+                                            <p class="text-muted small mb-0">الشركة الطبية المتحدة</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4 mb-3">
+                                        <div class="team-card bg-light p-3 rounded-3 text-center">
+                                            <i class="fas fa-user-tie text-danger fa-2x mb-2"></i>
+                                            <h6 class="fw-bold text-danger">وفد من الخبراء</h6>
+                                            <p class="text-muted small mb-0">شركة Mindray العالمية</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Visit Purpose -->
+                            <div class="visit-purpose mb-4">
+                                <h5 class="fw-bold text-primary mb-3">
+                                    <i class="fas fa-target text-success me-2"></i>
+                                    هدف الزيارة
+                                </h5>
+                                <div class="purpose-content bg-light p-3 rounded-3">
+                                    <p class="mb-2">
+                                        <i class="fas fa-eye text-primary me-2"></i>
+                                        <strong>الاطلاع على التقنيات الحديثة</strong> المتوفرة في مختبرات الشمس الطبية
+                                    </p>
+                                    <p class="mb-0">
+                                        <i class="fas fa-cogs text-success me-2"></i>
+                                        <strong>تبادل الخبرات والمعرفة التقنية</strong> في مجال التشخيص المختبري
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Partnership -->
+                            <div class="partnership-section">
+                                <h5 class="fw-bold text-primary mb-3">
+                                    <i class="fas fa-globe partnership-icon me-2"></i>
+                                    الشراكة العالمية
+                                </h5>
+                                <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                        <div class="company-badge bg-primary bg-opacity-10 p-3 rounded-3 text-center">
+                                            <i class="fas fa-building text-primary me-2"></i>
+                                            <strong>الشركة الطبية المتحدة</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <div class="company-badge bg-success bg-opacity-10 p-3 rounded-3 text-center">
+                                            <i class="fas fa-star text-success me-2"></i>
+                                            <strong>شركة Mindray</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="visit-images">
+                        <div class="image-card mb-3">
+                            <img src="images/21.jpg" alt="الزيارة العلمية لمختبرات الشمس" class="img-fluid rounded-3 shadow">
+                            <div class="text-center mt-2">
+                                <small class="text-muted">الزيارة العلمية لمختبرات الشمس</small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mb-2">
+                                <img src="images/22.jpg" alt="وفد الخبراء من Mindray" class="img-fluid rounded-3 shadow">
+                                <div class="text-center mt-1">
+                                    <small class="text-muted">وفد الخبراء</small>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <img src="images/23.jpg" alt="التقنيات الحديثة" class="img-fluid rounded-3 shadow">
+                                <div class="text-center mt-1">
+                                    <small class="text-muted">التقنيات الحديثة</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scientific Conference Post -->
+    <section class="py-5 bg-gradient-primary">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-white fw-bold">النشاطات العلمية المتواصلة</h2>
+                <p class="text-white-50">مشاركة متميزة في المؤتمرات العلمية المتخصصة</p>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4">
+                    <div class="conference-post-card bg-white rounded-4 shadow-lg p-4">
+                        <div class="post-header mb-4">
+                            <div class="activity-banner bg-success text-white text-center py-3 rounded-3 mb-4">
+                                <h4 class="fw-bold mb-1">
+                                    <i class="fas fa-microscope me-2"></i>
+                                    ضمن النشاطات العلمية المتواصلة لمختبراتنا
+                                </h4>
+                                <p class="mb-0 small">التميز في المشاركة العلمية والأكاديمية</p>
+                            </div>
+                        </div>
+
+                        <div class="conference-content">
+                            <!-- Conference Participation -->
+                            <div class="participation-highlight mb-4">
+                                <div class="participation-card bg-primary bg-opacity-10 p-4 rounded-3 border border-primary">
+                                    <h5 class="fw-bold text-primary mb-3">
+                                        <i class="fas fa-users text-success me-2"></i>
+                                        مشاركة متميزة لأطبائنا الاختصاص
+                                    </h5>
+                                    <div class="participation-content">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="fas fa-user-md text-primary fa-2x me-3"></i>
+                                            <div>
+                                                <h6 class="fw-bold text-primary mb-1">أطباء اختصاص أمراض الدم</h6>
+                                                <p class="text-muted mb-0 small">من مختبرات الشمس الطبية</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Conference Details -->
+                            <div class="conference-details mb-4">
+                                <h5 class="fw-bold text-success mb-3">
+                                    <i class="fas fa-calendar-alt text-primary me-2"></i>
+                                    تفاصيل المؤتمر
+                                </h5>
+
+                                <div class="conference-info">
+                                    <div class="info-item mb-3">
+                                        <div class="d-flex align-items-start">
+                                            <div class="info-icon me-3">
+                                                <i class="fas fa-certificate text-warning fa-lg"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="fw-bold text-warning mb-1">المؤتمر السنوي</h6>
+                                                <p class="text-muted mb-0 small">لجمعية أمراض الدم العراقية</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="info-item mb-3">
+                                        <div class="d-flex align-items-start">
+                                            <div class="info-icon me-3">
+                                                <i class="fas fa-map-marker-alt text-danger fa-lg"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="fw-bold text-danger mb-1">المكان</h6>
+                                                <p class="text-muted mb-0 small">السليمانية - فندق جراند ميلينيوم</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="info-item mb-3">
+                                        <div class="d-flex align-items-start">
+                                            <div class="info-icon me-3">
+                                                <i class="fas fa-calendar text-info fa-lg"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="fw-bold text-info mb-1">التاريخ</h6>
+                                                <p class="text-muted mb-0 small">للفترة من 1-2 / أيار / 2025</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Conference Importance -->
+                            <div class="conference-importance mb-4">
+                                <div class="importance-card bg-success bg-opacity-10 p-4 rounded-3 border border-success">
+                                    <h5 class="fw-bold text-success mb-3">
+                                        <i class="fas fa-star text-warning me-2"></i>
+                                        أهمية المشاركة
+                                    </h5>
+                                    <div class="importance-content">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="benefit-item">
+                                                    <i class="fas fa-graduation-cap text-primary fa-2x mb-2"></i>
+                                                    <h6 class="fw-bold text-primary">التطوير العلمي</h6>
+                                                    <p class="text-muted small mb-0">مواكبة أحدث التطورات في مجال أمراض الدم</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <div class="benefit-item">
+                                                    <i class="fas fa-handshake text-success fa-2x mb-2"></i>
+                                                    <h6 class="fw-bold text-success">التبادل العلمي</h6>
+                                                    <p class="text-muted small mb-0">تبادل الخبرات مع الأطباء المتخصصين</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <div class="benefit-item">
+                                                    <i class="fas fa-microscope text-info fa-2x mb-2"></i>
+                                                    <h6 class="fw-bold text-info">التقنيات الحديثة</h6>
+                                                    <p class="text-muted small mb-0">التعرف على أحدث التقنيات التشخيصية</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <div class="benefit-item">
+                                                    <i class="fas fa-trophy text-warning fa-2x mb-2"></i>
+                                                    <h6 class="fw-bold text-warning">التميز المهني</h6>
+                                                    <p class="text-muted small mb-0">تعزيز مكانة مختبراتنا العلمية</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Lab Signature -->
+                            <div class="lab-signature text-center">
+                                <div class="signature-icon mb-3">
+                                    <i class="fas fa-hospital-alt text-primary fa-3x"></i>
+                                </div>
+                                <h5 class="fw-bold text-primary mb-2">مختبرات الشمس الطبية</h5>
+                                <p class="text-muted mb-0">
+                                    <i class="fas fa-hashtag me-1"></i>
+                                    <strong>إعلام_مختبرات_الشمس_الطبية</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="conference-images">
+                        <div class="image-card mb-3">
+                            <img src="images/26.jpg" alt="المؤتمر السنوي لجمعية أمراض الدم العراقية" class="img-fluid rounded-3 shadow">
+                            <div class="image-caption text-center mt-2">
+                                <small class="text-muted bg-light px-2 py-1 rounded">المؤتمر السنوي لجمعية أمراض الدم</small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mb-2">
+                                <img src="images/27.jpg" alt="مشاركة أطباء مختبرات الشمس" class="img-fluid rounded-3 shadow">
+                                <div class="image-caption text-center mt-1">
+                                    <small class="text-muted">مشاركة أطبائنا</small>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <img src="images/28.jpg" alt="فندق جراند ميلينيوم السليمانية" class="img-fluid rounded-3 shadow">
+                                <div class="image-caption text-center mt-1">
+                                    <small class="text-muted">فندق جراند ميلينيوم</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Accreditation Excellence Post -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title text-primary">صرح عالمي في كافة المجالات</h2>
+                <p class="text-muted">تطبيق أعلى معايير الجودة العالمية</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <div class="accreditation-excellence-card bg-white rounded-4 shadow-lg p-4">
+                        <div class="post-header mb-4">
+                            <div class="global-banner bg-primary text-white text-center py-3 rounded-3 mb-4">
+                                <h4 class="fw-bold mb-1">
+                                    <i class="fas fa-globe me-2"></i>
+                                    مختبراتنا صرح عالمي في كافة المجالات
+                                </h4>
+                                <p class="mb-0 small">عازمون على تقديم أفضل خدمة مختبرية</p>
+                            </div>
+                        </div>
+
+                        <div class="accreditation-content">
+                            <!-- Mission Statement -->
+                            <div class="mission-statement mb-4">
+                                <div class="mission-card bg-success bg-opacity-10 p-4 rounded-3 border border-success">
+                                    <h5 class="fw-bold text-success mb-3 text-center">
+                                        <i class="fas fa-target text-primary me-2"></i>
+                                        رسالتنا في التميز
+                                    </h5>
+                                    <div class="mission-content text-center">
+                                        <h4 class="fw-bold text-primary mb-3">عازمون على تقديم أفضل خدمة مختبرية</h4>
+                                        <h5 class="fw-bold text-success mb-3">من خلال تطبيق أعلى معايير الجودة</h5>
+                                        <h6 class="fw-bold text-info">عن طريق الاشتراك بأفضل البرامج العالمية للسيطرة النوعية</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CAP Accreditation -->
+                            <div class="cap-accreditation mb-4">
+                                <h5 class="fw-bold text-success mb-3 text-center">
+                                    <i class="fas fa-certificate text-warning me-2"></i>
+                                    الاعتماد الدولي
+                                </h5>
+
+                                <div class="cap-card bg-primary bg-opacity-10 p-4 rounded-3 border border-primary">
+                                    <div class="text-center mb-4">
+                                        <div class="cap-logo mb-3">
+                                            <i class="fas fa-award text-warning fa-4x"></i>
+                                        </div>
+                                        <h4 class="fw-bold text-primary mb-2">برنامج الاعتماد الدولي للمختبرات</h4>
+                                        <h5 class="fw-bold text-success mb-2">كلية علماء الأمراض الأمريكية</h5>
+                                        <div class="cap-badge bg-primary text-white p-3 rounded-3">
+                                            <h5 class="fw-bold mb-0">College of American Pathologist (CAP)</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Excellent Results -->
+                            <div class="excellent-results mb-4">
+                                <h5 class="fw-bold text-success mb-4 text-center">
+                                    <i class="fas fa-trophy text-warning me-2"></i>
+                                    نتائج الدورة الثانية الممتازة
+                                </h5>
+
+                                <div class="results-grid">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="result-card bg-success bg-opacity-10 p-4 rounded-3 text-center border border-success">
+                                                <div class="result-icon mb-3">
+                                                    <i class="fas fa-shield-virus text-success fa-3x"></i>
+                                                </div>
+                                                <h4 class="fw-bold text-success mb-2">المناعة</h4>
+                                                <div class="result-percentage text-success fw-bold mb-2" style="font-size: 3rem;">100%</div>
+                                                <div class="excellence-badge bg-success text-white px-3 py-1 rounded-pill">
+                                                    <small class="fw-bold">ممتاز</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="result-card bg-primary bg-opacity-10 p-4 rounded-3 text-center border border-primary">
+                                                <div class="result-icon mb-3">
+                                                    <i class="fas fa-vial text-primary fa-3x"></i>
+                                                </div>
+                                                <h4 class="fw-bold text-success mb-2">الكيمياء السريرية</h4>
+                                                <div class="result-percentage text-success fw-bold mb-2" style="font-size: 3rem;">99%</div>
+                                                <div class="excellence-badge bg-primary text-white px-3 py-1 rounded-pill">
+                                                    <small class="fw-bold">ممتاز</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="result-card bg-info bg-opacity-10 p-4 rounded-3 text-center border border-info">
+                                                <div class="result-icon mb-3">
+                                                    <i class="fas fa-heartbeat text-info fa-3x"></i>
+                                                </div>
+                                                <h4 class="fw-bold text-info mb-2">الهرمونات</h4>
+                                                <div class="result-percentage text-info fw-bold mb-2" style="font-size: 3rem;">100%</div>
+                                                <div class="excellence-badge bg-info text-white px-3 py-1 rounded-pill">
+                                                    <small class="fw-bold">ممتاز</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Appreciation Section -->
+                            <div class="appreciation-section mb-4">
+                                <h5 class="fw-bold text-success mb-4 text-center">
+                                    <i class="fas fa-handshake text-primary me-2"></i>
+                                    شكر وتقدير
+                                </h5>
+
+                                <div class="appreciation-content">
+                                    <div class="appreciation-intro mb-4">
+                                        <div class="intro-card bg-warning bg-opacity-10 p-3 rounded-3 text-center">
+                                            <h6 class="fw-bold text-warning mb-2">لابد لي من تقديم الشكر الجزيل</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="partner-card bg-light p-4 rounded-3 border-start border-primary border-4">
+                                                <h6 class="fw-bold text-primary mb-2">
+                                                    <i class="fas fa-building me-2"></i>
+                                                    شركة روش
+                                                </h6>
+                                                <p class="text-muted small mb-2">تقديم الدعم للاشتراك في البرامج العالمية</p>
+                                                <div class="partner-badge bg-primary text-white px-2 py-1 rounded">
+                                                    <small>شريك استراتيجي</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <div class="partner-card bg-light p-4 rounded-3 border-start border-success border-4">
+                                                <h6 class="fw-bold text-success mb-2">
+                                                    <i class="fas fa-microscope me-2"></i>
+                                                    مكتب التقدم العلمي
+                                                </h6>
+                                                <p class="text-muted small mb-2">بجميع كوادره الفنية والإدارية</p>
+                                                <div class="partner-badge bg-success text-white px-2 py-1 rounded">
+                                                    <small>دعم فني متميز</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="special-thanks mt-4">
+                                        <div class="thanks-card bg-gradient-primary text-white p-4 rounded-3 text-center">
+                                            <h6 class="fw-bold mb-3">شكر خاص</h6>
+                                            <h5 class="fw-bold mb-2">الأستاذ رفعت محمد المحترم</h5>
+                                            <p class="mb-2">لمساهمته الفاعلة وجهوده الحثيثة</p>
+                                            <p class="mb-0 small">لإكمال جميع الاحتياجات الفنية</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Images Gallery -->
+                            <div class="accreditation-gallery mb-4">
+                                <h5 class="fw-bold text-success mb-3 text-center">
+                                    <i class="fas fa-images text-primary me-2"></i>
+                                    معرض الاعتماد الدولي
+                                </h5>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="gallery-item">
+                                            <img src="images/36.jpg" alt="برنامج الاعتماد الدولي CAP" class="img-fluid rounded-3 shadow">
+                                            <div class="gallery-caption text-center mt-2">
+                                                <small class="text-muted bg-light px-2 py-1 rounded">برنامج الاعتماد الدولي CAP</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <div class="gallery-item">
+                                            <img src="images/37.jpg" alt="النتائج الممتازة للدورة الثانية" class="img-fluid rounded-3 shadow">
+                                            <div class="gallery-caption text-center mt-2">
+                                                <small class="text-muted bg-light px-2 py-1 rounded">النتائج الممتازة</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="gallery-item">
+                                            <img src="images/38.jpg" alt="شراكة مع شركة روش" class="img-fluid rounded-3 shadow">
+                                            <div class="gallery-caption text-center mt-2">
+                                                <small class="text-muted bg-light px-2 py-1 rounded">شراكة مع شركة روش</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <div class="gallery-item">
+                                            <img src="images/39.jpg" alt="مكتب التقدم العلمي" class="img-fluid rounded-3 shadow">
+                                            <div class="gallery-caption text-center mt-2">
+                                                <small class="text-muted bg-light px-2 py-1 rounded">مكتب التقدم العلمي</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Continuous Excellence & CAP Accreditation Post -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title text-primary">مستمرون وعازمون على التميز</h2>
+                <p class="text-muted">أعلى معايير الجودة العالمية</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <div class="continuous-cap-card bg-white rounded-4 shadow-lg p-4">
+                        <div class="post-header mb-4">
+                            <div class="commitment-banner bg-primary text-white text-center py-3 rounded-3 mb-4">
+                                <h4 class="fw-bold mb-1">
+                                    <i class="fas fa-rocket me-2"></i>
+                                    مستمرون وعازمون على تقديم أفضل خدمة مختبرية
+                                </h4>
+                                <p class="mb-0 small">من خلال تطبيق أعلى معايير الجودة</p>
+                            </div>
+                        </div>
+
+                        <div class="cap-content">
+                            <!-- Commitment Statement -->
+                            <div class="commitment-statement mb-4">
+                                <div class="statement-card bg-success bg-opacity-10 p-4 rounded-3 border border-success">
+                                    <h5 class="fw-bold text-success mb-3 text-center">
+                                        <i class="fas fa-bullseye text-primary me-2"></i>
+                                        التزامنا بالتميز
+                                    </h5>
+                                    <div class="commitment-content text-center">
+                                        <h4 class="fw-bold text-primary mb-3">مستمرون وعازمون على تقديم أفضل خدمة مختبرية</h4>
+                                        <h5 class="fw-bold text-success mb-3">من خلال تطبيق أعلى معايير الجودة</h5>
+                                        <h6 class="fw-bold text-info">عن طريق الاشتراك بأفضل البرامج العالمية للسيطرة النوعية</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Latest Achievement -->
+                            <div class="latest-achievement mb-4">
+                                <h5 class="fw-bold text-success mb-3 text-center">
+                                    <i class="fas fa-star text-warning me-2"></i>
+                                    آخر إنجازاتنا
+                                </h5>
+
+                                <div class="achievement-highlight bg-warning bg-opacity-10 p-4 rounded-3 border border-warning">
+                                    <div class="text-center mb-4">
+                                        <div class="achievement-icon mb-3">
+                                            <i class="fas fa-medal text-warning fa-4x"></i>
+                                        </div>
+                                        <h4 class="fw-bold text-warning mb-2">آخرها كان الاشتراك في</h4>
+                                        <h3 class="fw-bold text-primary mb-3">برنامج الاعتماد الدولي للمختبرات</h3>
+                                        <h4 class="fw-bold text-success mb-2">كلية علماء الأمراض الأمريكية</h4>
+                                        <div class="cap-badge-highlight bg-primary text-white p-3 rounded-3">
+                                            <h5 class="fw-bold mb-0">College of American Pathologist (CAP)</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Outstanding Results -->
+                            <div class="outstanding-results mb-4">
+                                <h5 class="fw-bold text-success mb-4 text-center">
+                                    <i class="fas fa-trophy text-warning me-2"></i>
+                                    نتائج الدورة الأولى المميزة جداً
+                                </h5>
+
+                                <div class="results-showcase">
+                                    <div class="result-highlight bg-gradient-success text-white p-4 rounded-3 text-center">
+                                        <div class="result-icon mb-3">
+                                            <i class="fas fa-heartbeat fa-4x"></i>
+                                        </div>
+                                        <h3 class="fw-bold mb-3">نتائج الدورة الأولى</h3>
+                                        <h4 class="fw-bold mb-3">لمختبرات الشمس لأمراض الدم</h4>
+                                        <div class="excellence-rating">
+                                            <div class="rating-stars mb-3">
+                                                <i class="fas fa-star text-warning fa-2x me-1"></i>
+                                                <i class="fas fa-star text-warning fa-2x me-1"></i>
+                                                <i class="fas fa-star text-warning fa-2x me-1"></i>
+                                                <i class="fas fa-star text-warning fa-2x me-1"></i>
+                                                <i class="fas fa-star text-warning fa-2x"></i>
+                                            </div>
+                                            <h2 class="fw-bold text-warning mb-2">مميزة جداً</h2>
+                                            <p class="mb-0 fs-5">تقييم استثنائي في أمراض الدم</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Images Gallery -->
+                            <div class="cap-gallery mb-4">
+                                <h5 class="fw-bold text-success mb-3 text-center">
+                                    <i class="fas fa-images text-primary me-2"></i>
+                                    معرض الإنجازات والاعتماد
+                                </h5>
+
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="gallery-item">
+                                            <img src="images/42.jpg" alt="برنامج الاعتماد الدولي CAP" class="img-fluid rounded-3 shadow">
+                                            <div class="gallery-caption text-center mt-2">
+                                                <small class="text-muted bg-light px-2 py-1 rounded">برنامج الاعتماد الدولي CAP</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 mb-3">
+                                        <div class="gallery-item">
+                                            <img src="images/43.jpg" alt="النتائج المميزة جداً للدورة الأولى" class="img-fluid rounded-3 shadow">
+                                            <div class="gallery-caption text-center mt-2">
+                                                <small class="text-muted bg-light px-2 py-1 rounded">النتائج المميزة جداً</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 mb-3">
+                                        <div class="gallery-item">
+                                            <img src="images/44.jpg" alt="تخصص أمراض الدم" class="img-fluid rounded-3 shadow">
+                                            <div class="gallery-caption text-center mt-2">
+                                                <small class="text-muted bg-light px-2 py-1 rounded">تخصص أمراض الدم</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scientific Cooperation Visit Post -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title text-success">التعاون العلمي المشترك</h2>
+                <p class="text-muted">زيارة علمية من كلية الطب البيطري</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <div class="cooperation-visit-card bg-white rounded-4 shadow-lg p-4">
+                        <div class="post-header mb-4">
+                            <div class="cooperation-banner bg-success text-white text-center py-3 rounded-3 mb-4">
+                                <h4 class="fw-bold mb-1">
+                                    <i class="fas fa-handshake me-2"></i>
+                                    اتفاقية التعاون العلمي المشترك
+                                </h4>
+                                <p class="mb-0 small">بين مختبرات الشمس الطبية وجامعة ديالى</p>
+                            </div>
+                        </div>
+
+                        <div class="cooperation-content">
+                            <!-- Partnership Framework -->
+                            <div class="partnership-framework mb-4">
+                                <div class="framework-card bg-primary bg-opacity-10 p-4 rounded-3 border border-primary">
+                                    <h5 class="fw-bold text-primary mb-3 text-center">
+                                        <i class="fas fa-university text-success me-2"></i>
+                                        إطار التعاون العلمي
+                                    </h5>
+                                    <div class="partnership-content text-center">
+                                        <h4 class="fw-bold text-primary mb-3">ضمن إطار اتفاقية التعاون العلمي المشترك</h4>
+                                        <div class="partners-info">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="partner-item bg-light p-3 rounded-3">
+                                                        <i class="fas fa-hospital text-primary fa-2x mb-2"></i>
+                                                        <h6 class="fw-bold text-primary">مختبرات الشمس الطبية</h6>
+                                                        <p class="text-muted small mb-0">الشريك الطبي المتخصص</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="partner-item bg-light p-3 rounded-3">
+                                                        <i class="fas fa-university text-success fa-2x mb-2"></i>
+                                                        <h6 class="fw-bold text-success">جامعة ديالى</h6>
+                                                        <p class="text-muted small mb-0">الشريك الأكاديمي</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Visit Details -->
+                            <div class="visit-details mb-4">
+                                <h5 class="fw-bold text-success mb-3 text-center">
+                                    <i class="fas fa-users text-primary me-2"></i>
+                                    تفاصيل الزيارة العلمية
+                                </h5>
+
+                                <div class="visit-highlight bg-info bg-opacity-10 p-4 rounded-3 border border-info">
+                                    <div class="text-center mb-4">
+                                        <div class="visit-icon mb-3">
+                                            <i class="fas fa-paw text-info fa-4x"></i>
+                                        </div>
+                                        <h4 class="fw-bold text-info mb-2">انضمت كلية الطب البيطري</h4>
+                                        <h3 class="fw-bold text-primary mb-3">زيارة علمية إلى مختبرات الشمس الطبية</h3>
+                                        <div class="visit-badge bg-info text-white p-3 rounded-3">
+                                            <h6 class="fw-bold mb-0">زيارة علمية تخصصية</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Visit Objectives -->
+                            <div class="visit-objectives mb-4">
+                                <h5 class="fw-bold text-success mb-4 text-center">
+                                    <i class="fas fa-bullseye text-warning me-2"></i>
+                                    أهداف الزيارة
+                                </h5>
+
+                                <div class="objectives-grid">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="objective-card bg-warning bg-opacity-10 p-4 rounded-3 text-center h-100">
+                                                <div class="objective-icon mb-3">
+                                                    <i class="fas fa-chalkboard-teacher text-warning fa-3x"></i>
+                                                </div>
+                                                <h6 class="fw-bold text-warning mb-2">إطلاع الكادر التدريسي</h6>
+                                                <p class="text-muted small mb-0">في الكلية على التقنيات الحديثة المتوفرة</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <div class="objective-card bg-success bg-opacity-10 p-4 rounded-3 text-center h-100">
+                                                <div class="objective-icon mb-3">
+                                                    <i class="fas fa-user-graduate text-success fa-3x"></i>
+                                                </div>
+                                                <h6 class="fw-bold text-success mb-2">تعليم الطلبة</h6>
+                                                <p class="text-muted small mb-0">والتعرف على آلية عمل هذه التقنيات داخل المختبر</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Reception & Host -->
+                            <div class="reception-host mb-4">
+                                <h5 class="fw-bold text-success mb-3 text-center">
+                                    <i class="fas fa-user-tie text-primary me-2"></i>
+                                    الاستقبال والضيافة
+                                </h5>
+
+                                <div class="host-card bg-success bg-opacity-10 p-4 rounded-3 border border-success">
+                                    <div class="text-center mb-4">
+                                        <div class="host-icon mb-3">
+                                            <i class="fas fa-user-md text-success fa-3x"></i>
+                                        </div>
+                                        <h4 class="fw-bold text-success mb-2">وكان في استقبالهم</h4>
+                                        <h3 class="fw-bold text-primary mb-3">الكيمياوي الأقدم الاختصاص</h3>
+                                        <div class="host-name-card bg-primary text-white p-3 rounded-3">
+                                            <h4 class="fw-bold mb-0">عبدالله حسن القيسي</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Visitor Appreciation -->
+                            <div class="visitor-appreciation mb-4">
+                                <h5 class="fw-bold text-success mb-3 text-center">
+                                    <i class="fas fa-heart text-danger me-2"></i>
+                                    تقدير الفريق الزائر
+                                </h5>
+
+                                <div class="appreciation-card bg-gradient-success text-white p-4 rounded-3">
+                                    <div class="text-center">
+                                        <div class="appreciation-icon mb-3">
+                                            <i class="fas fa-thumbs-up fa-3x"></i>
+                                        </div>
+                                        <h4 class="fw-bold mb-3">أبدى الفريق الزائر شكرهم</h4>
+                                        <div class="appreciation-details">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-2">
+                                                    <div class="appreciation-item">
+                                                        <i class="fas fa-handshake me-2"></i>
+                                                        <span class="fw-bold">على الاستقبال الكريم</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-2">
+                                                    <div class="appreciation-item">
+                                                        <i class="fas fa-lightbulb me-2"></i>
+                                                        <span class="fw-bold">على المعلومات القيمة المطروحة</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Visit Gallery -->
+                            <div class="visit-gallery mb-4">
+                                <h5 class="fw-bold text-success mb-3 text-center">
+                                    <i class="fas fa-images text-primary me-2"></i>
+                                    معرض الزيارة العلمية
+                                </h5>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="gallery-item">
+                                            <img src="images/45.jpg" alt="كلية الطب البيطري - جامعة ديالى" class="img-fluid rounded-3 shadow">
+                                            <div class="gallery-caption text-center mt-2">
+                                                <small class="text-muted bg-light px-2 py-1 rounded">كلية الطب البيطري</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <div class="gallery-item">
+                                            <img src="images/46.jpg" alt="الزيارة العلمية لمختبرات الشمس" class="img-fluid rounded-3 shadow">
+                                            <div class="gallery-caption text-center mt-2">
+                                                <small class="text-muted bg-light px-2 py-1 rounded">الزيارة العلمية</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="gallery-item">
+                                            <img src="images/47.jpg" alt="التقنيات الحديثة في المختبر" class="img-fluid rounded-3 shadow">
+                                            <div class="gallery-caption text-center mt-2">
+                                                <small class="text-muted bg-light px-2 py-1 rounded">التقنيات الحديثة</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <div class="gallery-item">
+                                            <img src="images/48.jpg" alt="الكيمياوي الأقدم عبدالله حسن القيسي" class="img-fluid rounded-3 shadow">
+                                            <div class="gallery-caption text-center mt-2">
+                                                <small class="text-muted bg-light px-2 py-1 rounded">الكيمياوي الأقدم</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-3">مهتم بزيارة مختبراتنا؟</h3>
+            <p class="lead mb-4">نرحب بالزيارات العلمية والتعاون مع الشركات والمؤسسات الطبية</p>
+            <a href="contact.html" class="btn btn-light btn-lg">تواصل معنا</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">مختبرات الشمس الطبية</h5>
+                    <p class="text-muted">نحن ملتزمون بتقديم أفضل خدمات التشخيص الطبي بأعلى معايير الجودة والدقة.</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted text-decoration-none">الصفحة الرئيسية</a></li>
+                        <li><a href="about.html" class="text-muted text-decoration-none">عن مختبرات الشمس</a></li>
+                        <li><a href="services.html" class="text-muted text-decoration-none">خدماتنا</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">معلومات الاتصال</h5>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>ديالى - بعقوبة - شارع الطابو</p>
+                    <p class="text-muted"><i class="fas fa-phone me-2"></i>07770365517 - 07733334356</p>
+                    <p class="text-muted"><i class="fas fa-clock me-2"></i>يومياً من 8 صباحاً إلى 8 مساءً</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 مختبرات الشمس الطبية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
